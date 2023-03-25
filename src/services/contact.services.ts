@@ -5,4 +5,19 @@ const getAllContact  = async  () =>{
     return await Contact.find()
 }
 
-export {getAllContact}
+
+const getContact = async (target : any) =>{
+
+    return await Contact.findOne({
+        where : {
+            id : target 
+        }
+    })
+}
+
+
+const addContact  = async (datas : any) =>{
+    await Contact.save(datas)
+}
+
+export {getAllContact, getContact, addContact}
