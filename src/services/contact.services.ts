@@ -16,6 +16,8 @@ const getContact = async (target : any) =>{
 }
 
 
+
+
 const addContact  = async (datas : any) =>{
     await Contact.save(datas)
 }
