@@ -20,6 +20,8 @@ class Contact extends BaseEntity {
 
     @Column()
     subject : string 
+    @Column()
+    message : string
 
     @Column()
     sent_at : Date
