@@ -2,7 +2,7 @@ import * as TypeORM from 'typeorm'
 
 
 @TypeORM.Entity()
-export class Skills extends TypeORM.BaseEntity{
+class Skills extends TypeORM.BaseEntity{
     @TypeORM.PrimaryGeneratedColumn()
     id: number
 
@@ -15,3 +15,5 @@ export class Skills extends TypeORM.BaseEntity{
     @TypeORM.Column()
     updated_at: Date
 }
+
+export default Skills
