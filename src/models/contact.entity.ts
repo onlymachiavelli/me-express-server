@@ -26,6 +26,8 @@ class Contact extends BaseEntity {
     @Column()
     sent_at : Date
 
+    
+
 }
 
 export default Contact
