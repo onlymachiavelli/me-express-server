@@ -1,8 +1,7 @@
-import * as EXPRESS from 'express'
-
+import  {Router}from 'express'
 import CreateSkill from '../controllers/Skills/createSkill.controller'
 import GetAll from '../controllers/Skills/getall.controller'
-const SkillRouter = EXPRESS.Router()
+const SkillRouter = Router()
 
 SkillRouter.post("/", CreateSkill)
 SkillRouter.get("/", GetAll)

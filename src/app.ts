@@ -3,6 +3,7 @@ import "dotenv/config"
 import { json } from "body-parser"
 import appDataSource from "./utils/POSTGRES"
 import contactRoute from "./routes/Contact.Routes"
+import SkillRouter from "./routes/skills.routes"
 const cors = require("cors")
 const app = express()
 
@@ -11,7 +12,7 @@ const app = express()
 app.use(json())
 app.use(cors())
 
-const PORT: any = process.env.PORT || 3000
+const PORT: any = process.env.PORT || 3001
 
 app
   .listen(PORT, () => {
@@ -22,12 +23,13 @@ app
       .then((res: any) => {
         console.log("Connected to the database ! ")
         app.use("/contact", contactRoute)  
+        app.use("/skills", SkillRouter)
         //app use
       })
       .catch((e: any) => {
         console.log(e)
       })
   })
-  .on("error", () => {
-    console.log("There's an error ! ")
+  .on("error", (e) => {
+    console.log("There's an error ! ", e)
   })
