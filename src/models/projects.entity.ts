@@ -4,7 +4,7 @@ import * as TypeORM from 'typeorm'
 @TypeORM.Entity()
 
 
-class Projects{
+class Projects extends TypeORM.BaseEntity{
     @TypeORM.PrimaryGeneratedColumn()
     id : Number 
 
