@@ -1,6 +1,6 @@
 import * as TypeORM from 'typeorm'
 
-enum type  {
+enum Type  {
     "Library",
     "Framework",
     "Language",
@@ -16,12 +16,15 @@ class Tools extends TypeORM.BaseEntity{
     @TypeORM.Column()
     name: string
 
-    @TypeORM.Column()
-    type: type
+    @TypeORM.Column({
+        type : 'enum', 
+        enum : Type
+    })
+    type: String
 
     @TypeORM.Column()
     svg:string
-    
+
     @TypeORM.Column()
     created_at: Date
 

@@ -4,6 +4,7 @@ import { json } from "body-parser"
 import appDataSource from "./utils/POSTGRES"
 import contactRoute from "./routes/Contact.Routes"
 import SkillRouter from "./routes/skills.routes"
+import ToolsRouter from "./routes/Tools.routes"
 const cors = require("cors")
 const app = express()
 
@@ -24,6 +25,7 @@ app
         console.log("Connected to the database ! ")
         app.use("/contact", contactRoute)  
         app.use("/skills", SkillRouter)
+        app.use("/tools", ToolsRouter)
         //app use
       })
       .catch((e: any) => {
