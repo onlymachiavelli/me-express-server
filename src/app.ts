@@ -5,6 +5,7 @@ import appDataSource from "./utils/POSTGRES"
 import contactRoute from "./routes/Contact.Routes"
 import SkillRouter from "./routes/skills.routes"
 import ToolsRouter from "./routes/Tools.routes"
+import ProjRouter from "./routes/projects.router"
 const cors = require("cors")
 const app = express()
 
@@ -26,6 +27,7 @@ app
         app.use("/contact", contactRoute)  
         app.use("/skills", SkillRouter)
         app.use("/tools", ToolsRouter)
+        app.use("/projects", ProjRouter)
         //app use
       })
       .catch((e: any) => {
